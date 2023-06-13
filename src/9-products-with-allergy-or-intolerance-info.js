@@ -16,5 +16,4 @@ const getProductsWithAllergyOrIntoleranceInfo = () => {
   };
   return(productsAlergyInt);
 };
-
 module.exports = { getProductsWithAllergyOrIntoleranceInfo };
