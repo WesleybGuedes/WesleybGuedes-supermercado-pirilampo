@@ -1,20 +1,19 @@
 const stockProducts = require('./data.json');
 
-const getProductsOnSale = (promotional) => {
-  const productsSale = {};
+const getProductsOnSale = () => {
   const promotionalProduct = [];
   for ( index = 0; index < stockProducts.length; index += 1 ) {
     const elemento = stockProducts[index];
-      if (promotional === elemento.productName) {
-      return [
-        productsSale.description = elemento.description,
-        productsSale.formattedPrice = `R$ ${elemento.price}`,
-        productsSale.onSale = elemento.onSale ];      
-    };
+      if (elemento.onSale === true) {
+      let productsSale = {
+        description : elemento.description,
+        formattedPrice : `R$ ${elemento.price}`,
+        onSale : true      
+      };
+    promotionalProduct.push(productsSale);
  
+    };
   };
-     return promotionalProduct;
+  return(promotionalProduct);
 };
-
-
 module.exports = { getProductsOnSale };
