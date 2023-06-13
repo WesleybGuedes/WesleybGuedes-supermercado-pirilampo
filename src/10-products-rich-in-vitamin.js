@@ -8,7 +8,7 @@ const getProductsRichInVitamin = () => {
       let alimentArray = {
         description : elemento.description,
         formattedPrice : `R$ ${elemento.price}`,
-        vitaminsInformation : []      
+        vitaminsInformation : []    
       };
       productsVitamin.push(alimentArray);
  
