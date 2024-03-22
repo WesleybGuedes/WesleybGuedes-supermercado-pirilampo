@@ -1,10 +1,7 @@
 const stockProducts = require('./data.json');
 
 const getUniqueProductsName = () => {
-  const productsList = [];
-  for ( index = 0; index < stockProducts.length; index += 1 ) {
-    productsList[index] = stockProducts[index].productName;
-  }
-  return productsList;
+  const products = stockProducts.map((product) => product.productName);
+  return products;
 };
 module.exports = { getUniqueProductsName };
