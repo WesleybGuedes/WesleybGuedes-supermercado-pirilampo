@@ -1,13 +1,7 @@
 const stockProducts = require('./data.json');
 
-const getLowStockProducts = () => {
-  const lowStock = [];
-    for ( index = 0; index < stockProducts.length; index += 1 ) {
-    const elemento = stockProducts[index];
-    if (elemento.quantityInStock > 0 && elemento.quantityInStock <= 10) {
-      lowStock.push(`${elemento.productName}: ${elemento.quantityInStock} unidades`);
-    };
-  };
-  return lowStock;
-};
+const getLowStockProducts = () => stockProducts
+  .filter((product) => product.quantityInStock > 0 && product.quantityInStock <= 10)
+  .map((product) => `${product.productName}: ${product.quantityInStock} unidades`);
+
 module.exports = { getLowStockProducts };
